@@ -1,9 +1,8 @@
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react'
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
-import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 
-const LoginPage = () => {
+export default function NewExamSessionPage() {
   const supabaseClient = useSupabaseClient()
   const user = useUser()
 
@@ -19,16 +18,14 @@ const LoginPage = () => {
         supabaseClient={supabaseClient}        
       />
     )
-
+  
   return (
     <>
-      <Navigation 
-        onLogout={logoutCallback.bind(logoutCallback)}
+      <Navigation
+        onLogout={logoutCallback.bind(logoutCallback)} 
         username={user.email}
       />      
-      <Link href="/new-exam-session">Start new exam session</Link>
+      <div>WIP ...</div>
     </>
   )
 }
-
-export default LoginPage
